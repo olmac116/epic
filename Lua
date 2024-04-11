@@ -1,22 +1,43 @@
+local TweenService = game:GetService("TweenService")
+
 local Gui = Instance.new("ScreenGui")
 local Holder = Instance.new("Frame")
 local Dragger = Instance.new("Frame")
 local UIGradient = Instance.new("UIGradient")
 local UICorner = Instance.new("UICorner")
+local TitleBarButtons = Instance.new("Frame")
+local UIGridLayout = Instance.new("UIGridLayout")
+local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+local ShortLong1 = Instance.new("ImageButton")
+local UIAspectRatioConstraint_2 = Instance.new("UIAspectRatioConstraint")
+local TallSmall1 = Instance.new("ImageButton")
+local UIAspectRatioConstraint_3 = Instance.new("UIAspectRatioConstraint")
+local DefaultSize = Instance.new("ImageButton")
+local UIAspectRatioConstraint_4 = Instance.new("UIAspectRatioConstraint")
+local Exit = Instance.new("ImageButton")
+local UIAspectRatioConstraint_5 = Instance.new("UIAspectRatioConstraint")
+local Minimise = Instance.new("ImageButton")
+local UIAspectRatioConstraint_6 = Instance.new("UIAspectRatioConstraint")
 local Main = Instance.new("Frame")
 local UICorner_2 = Instance.new("UICorner")
 local Blocker = Instance.new("Frame")
 local Blocker_2 = Instance.new("Frame")
-local ScrollingFrame = Instance.new("ScrollingFrame")
+local Pages = Instance.new("Frame")
+local UIPageLayout = Instance.new("UIPageLayout")
+local MainPage = Instance.new("Frame")
+local MainPage_DataList = Instance.new("ScrollingFrame")
 local Template = Instance.new("Frame")
-local Data = Instance.new("TextLabel")
+local Data = Instance.new("TextBox")
 local UIPadding = Instance.new("UIPadding")
-local UIGridLayout = Instance.new("UIGridLayout")
-local UIPadding_2 = Instance.new("UIPadding")
-local Remotes = Instance.new("TextButton")
 local UITextSizeConstraint = Instance.new("UITextSizeConstraint")
-local De = Instance.new("TextButton")
+local UIGridLayout_2 = Instance.new("UIGridLayout")
+local UIPadding_2 = Instance.new("UIPadding")
+local MainPage_ReplicatedRemotes = Instance.new("TextButton")
 local UITextSizeConstraint_2 = Instance.new("UITextSizeConstraint")
+local UICorner_3 = Instance.new("UICorner")
+local MainPage_UserDescendants = Instance.new("TextButton")
+local UITextSizeConstraint_3 = Instance.new("UITextSizeConstraint")
+local UICorner_4 = Instance.new("UICorner")
 
 --Properties:
 
@@ -47,8 +68,96 @@ Dragger.Size = UDim2.new(0.899999976, 0, 0.150000021, 0)
 UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(242, 157, 76)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(238, 201, 86))}
 UIGradient.Parent = Dragger
 
-UICorner.CornerRadius = UDim.new(0, 15)
+UICorner.CornerRadius = UDim.new(0.231910914, 0)
 UICorner.Parent = Dragger
+
+TitleBarButtons.Name = "TitleBarButtons"
+TitleBarButtons.Parent = Dragger
+TitleBarButtons.AnchorPoint = Vector2.new(1, 0)
+TitleBarButtons.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TitleBarButtons.BackgroundTransparency = 1.000
+TitleBarButtons.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TitleBarButtons.BorderSizePixel = 0
+TitleBarButtons.Position = UDim2.new(1, 0, 0, 0)
+TitleBarButtons.Size = UDim2.new(0.5, 0, 1, 0)
+
+UIGridLayout.Parent = TitleBarButtons
+UIGridLayout.HorizontalAlignment = Enum.HorizontalAlignment.Right
+UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIGridLayout.VerticalAlignment = Enum.VerticalAlignment.Center
+UIGridLayout.CellSize = UDim2.new(0.14475131, 0, 0.77303642, 0)
+
+UIAspectRatioConstraint.Parent = UIGridLayout
+
+ShortLong1.Name = "ShortLong1"
+ShortLong1.Parent = TitleBarButtons
+ShortLong1.AnchorPoint = Vector2.new(0.5, 0.5)
+ShortLong1.BackgroundTransparency = 1.000
+ShortLong1.LayoutOrder = 1
+ShortLong1.Position = UDim2.new(0.5, 0, 0.5, 0)
+ShortLong1.Size = UDim2.new(0, 25, 0, 25)
+ShortLong1.ZIndex = 2
+ShortLong1.Image = "rbxassetid://3926305904"
+ShortLong1.ImageRectOffset = Vector2.new(44, 724)
+ShortLong1.ImageRectSize = Vector2.new(36, 36)
+
+UIAspectRatioConstraint_2.Parent = ShortLong1
+
+TallSmall1.Name = "TallSmall1"
+TallSmall1.Parent = TitleBarButtons
+TallSmall1.AnchorPoint = Vector2.new(0.5, 0.5)
+TallSmall1.BackgroundTransparency = 1.000
+TallSmall1.LayoutOrder = 3
+TallSmall1.Position = UDim2.new(0.5, 0, 0.5, 0)
+TallSmall1.Size = UDim2.new(0, 25, 0, 25)
+TallSmall1.ZIndex = 2
+TallSmall1.Image = "rbxassetid://3926305904"
+TallSmall1.ImageRectOffset = Vector2.new(524, 684)
+TallSmall1.ImageRectSize = Vector2.new(36, 36)
+
+UIAspectRatioConstraint_3.Parent = TallSmall1
+
+DefaultSize.Name = "DefaultSize"
+DefaultSize.Parent = TitleBarButtons
+DefaultSize.AnchorPoint = Vector2.new(0.5, 0.5)
+DefaultSize.BackgroundTransparency = 1.000
+DefaultSize.LayoutOrder = 2
+DefaultSize.Position = UDim2.new(0.5, 0, 0.5, 0)
+DefaultSize.Size = UDim2.new(0, 25, 0, 25)
+DefaultSize.ZIndex = 2
+DefaultSize.Image = "rbxassetid://3926305904"
+DefaultSize.ImageRectOffset = Vector2.new(324, 684)
+DefaultSize.ImageRectSize = Vector2.new(36, 36)
+
+UIAspectRatioConstraint_4.Parent = DefaultSize
+
+Exit.Name = "Exit"
+Exit.Parent = TitleBarButtons
+Exit.AnchorPoint = Vector2.new(0.5, 0.5)
+Exit.BackgroundTransparency = 1.000
+Exit.LayoutOrder = 100
+Exit.Position = UDim2.new(0.5, 0, 0.5, 0)
+Exit.Size = UDim2.new(0, 25, 0, 25)
+Exit.ZIndex = 2
+Exit.Image = "rbxassetid://3926305904"
+Exit.ImageRectOffset = Vector2.new(284, 4)
+Exit.ImageRectSize = Vector2.new(24, 24)
+
+UIAspectRatioConstraint_5.Parent = Exit
+
+Minimise.Name = "Minimise"
+Minimise.Parent = TitleBarButtons
+Minimise.AnchorPoint = Vector2.new(0.5, 0.5)
+Minimise.BackgroundTransparency = 1.000
+Minimise.LayoutOrder = 6
+Minimise.Position = UDim2.new(0.5, 0, 0.5, 0)
+Minimise.Size = UDim2.new(0, 25, 0, 25)
+Minimise.ZIndex = 2
+Minimise.Image = "rbxassetid://3926307971"
+Minimise.ImageRectOffset = Vector2.new(884, 284)
+Minimise.ImageRectSize = Vector2.new(36, 36)
+
+UIAspectRatioConstraint_6.Parent = Minimise
 
 Main.Name = "Main"
 Main.Parent = Dragger
@@ -56,10 +165,11 @@ Main.AnchorPoint = Vector2.new(0.5, 0)
 Main.BackgroundColor3 = Color3.fromRGB(37, 37, 37)
 Main.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Main.BorderSizePixel = 0
+Main.ClipsDescendants = true
 Main.Position = UDim2.new(0.50000006, 0, 0.999999762, 0)
 Main.Size = UDim2.new(0.950000107, 0, 5.66666555, 0)
 
-UICorner_2.CornerRadius = UDim.new(0, 15)
+UICorner_2.CornerRadius = UDim.new(0.0409254655, 0)
 UICorner_2.Parent = Main
 
 Blocker.Name = "Blocker"
@@ -75,97 +185,164 @@ Blocker_2.Parent = Main
 Blocker_2.BackgroundColor3 = Color3.fromRGB(37, 37, 37)
 Blocker_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Blocker_2.BorderSizePixel = 0
-Blocker_2.Position = UDim2.new(0.950787485, 0, -0.00272828108, 0)
+Blocker_2.Position = UDim2.new(0.950999975, 0, 0, 0)
 Blocker_2.Size = UDim2.new(0.0487583317, 0, 0.111862943, 0)
 
-ScrollingFrame.Parent = Main
-ScrollingFrame.Active = true
-ScrollingFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ScrollingFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ScrollingFrame.BorderSizePixel = 0
-ScrollingFrame.Position = UDim2.new(0.542308271, 0, -0.00272861426, 0)
-ScrollingFrame.Size = UDim2.new(0.457109362, 0, 1, 0)
+Pages.Name = "Pages"
+Pages.Parent = Main
+Pages.AnchorPoint = Vector2.new(0.5, 0.5)
+Pages.BackgroundColor3 = Color3.fromRGB(37, 37, 37)
+Pages.BackgroundTransparency = 1.000
+Pages.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Pages.BorderSizePixel = 0
+Pages.Position = UDim2.new(0.5, 0, 0.5, 0)
+Pages.Size = UDim2.new(1, 0, 1, 0)
+
+UIPageLayout.Parent = Pages
+UIPageLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIPageLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIPageLayout.VerticalAlignment = Enum.VerticalAlignment.Center
+UIPageLayout.EasingStyle = Enum.EasingStyle.Quad
+UIPageLayout.TweenTime = 0.500
+
+MainPage.Name = "MainPage"
+MainPage.Parent = Pages
+MainPage.AnchorPoint = Vector2.new(0.5, 0.5)
+MainPage.BackgroundColor3 = Color3.fromRGB(37, 37, 37)
+MainPage.BackgroundTransparency = 1.000
+MainPage.BorderColor3 = Color3.fromRGB(0, 0, 0)
+MainPage.BorderSizePixel = 0
+MainPage.Position = UDim2.new(0.5, 0, 0.5, 0)
+MainPage.Size = UDim2.new(1, 0, 1, 0)
+
+MainPage_DataList.Name = "MainPage_DataList"
+MainPage_DataList.Parent = MainPage
+MainPage_DataList.Active = true
+MainPage_DataList.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+MainPage_DataList.BackgroundTransparency = 1.000
+MainPage_DataList.BorderColor3 = Color3.fromRGB(0, 0, 0)
+MainPage_DataList.BorderSizePixel = 0
+MainPage_DataList.Position = UDim2.new(0.413866907, 0, 0, 0)
+MainPage_DataList.Size = UDim2.new(0.58524251, 0, 1, 0)
 
 Template.Name = "Template"
-Template.Parent = ScrollingFrame
+Template.Parent = MainPage_DataList
 Template.BackgroundColor3 = Color3.fromRGB(46, 46, 46)
 Template.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Template.BorderSizePixel = 0
 Template.Size = UDim2.new(0, 100, 0, 100)
+Template.Visible = false
 
 Data.Name = "Data"
 Data.Parent = Template
+Data.Active = false
 Data.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Data.BackgroundTransparency = 1.000
 Data.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Data.BorderSizePixel = 0
+Data.Selectable = false
 Data.Size = UDim2.new(1, 0, 1, 0)
+Data.ClearTextOnFocus = false
 Data.Font = Enum.Font.SourceSans
+Data.Text = "Label"
 Data.TextColor3 = Color3.fromRGB(255, 255, 255)
+Data.TextScaled = true
 Data.TextSize = 14.000
+Data.TextWrapped = true
 Data.TextXAlignment = Enum.TextXAlignment.Left
 
 UIPadding.Parent = Data
 UIPadding.PaddingLeft = UDim.new(0, 15)
 
-UIGridLayout.Parent = ScrollingFrame
-UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
-UIGridLayout.CellSize = UDim2.new(1, 0, 0.0599999987, 0)
+UITextSizeConstraint.Parent = Data
+UITextSizeConstraint.MaxTextSize = 21
 
-UIPadding_2.Parent = ScrollingFrame
+UIGridLayout_2.Parent = MainPage_DataList
+UIGridLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
+UIGridLayout_2.CellSize = UDim2.new(1, 0, 0.0599999987, 0)
+
+UIPadding_2.Parent = MainPage_DataList
 UIPadding_2.PaddingTop = UDim.new(0, 5)
 
-Remotes.Name = "Remotes"
-Remotes.Parent = Main
-Remotes.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Remotes.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Remotes.BorderSizePixel = 0
-Remotes.Position = UDim2.new(0.0487583317, 0, 0.0791225657, 0)
-Remotes.Size = UDim2.new(0.304739565, 0, 0.136418223, 0)
-Remotes.Font = Enum.Font.SourceSans
-Remotes.Text = "Get all Events in ReplicatedStorage"
-Remotes.TextColor3 = Color3.fromRGB(0, 0, 0)
-Remotes.TextScaled = true
-Remotes.TextSize = 100.000
-Remotes.TextWrapped = true
+MainPage_ReplicatedRemotes.Name = "MainPage_ReplicatedRemotes"
+MainPage_ReplicatedRemotes.Parent = MainPage
+MainPage_ReplicatedRemotes.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+MainPage_ReplicatedRemotes.BorderColor3 = Color3.fromRGB(0, 0, 0)
+MainPage_ReplicatedRemotes.BorderSizePixel = 0
+MainPage_ReplicatedRemotes.Position = UDim2.new(0.0487583317, 0, 0.0791225657, 0)
+MainPage_ReplicatedRemotes.Size = UDim2.new(0.304739565, 0, 0.136418223, 0)
+MainPage_ReplicatedRemotes.Font = Enum.Font.SourceSansBold
+MainPage_ReplicatedRemotes.Text = "Get all Events in ReplicatedStorage"
+MainPage_ReplicatedRemotes.TextColor3 = Color3.fromRGB(255, 255, 255)
+MainPage_ReplicatedRemotes.TextScaled = true
+MainPage_ReplicatedRemotes.TextSize = 100.000
+MainPage_ReplicatedRemotes.TextWrapped = true
 
-UITextSizeConstraint.Parent = Remotes
+UITextSizeConstraint_2.Parent = MainPage_ReplicatedRemotes
 
-De.Name = "De"
-De.Parent = Main
-De.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-De.BorderColor3 = Color3.fromRGB(0, 0, 0)
-De.BorderSizePixel = 0
-De.Position = UDim2.new(0.0487583317, 0, 0.319218546, 0)
-De.Size = UDim2.new(0.304739565, 0, 0.136418223, 0)
-De.Font = Enum.Font.SourceSans
-De.Text = "Get All Decentants in "..game.Players.LocalPlayer.Name
-De.TextColor3 = Color3.fromRGB(0, 0, 0)
-De.TextScaled = true
-De.TextSize = 100.000
-De.TextWrapped = true
+UICorner_3.CornerRadius = UDim.new(0.200000003, 0)
+UICorner_3.Parent = MainPage_ReplicatedRemotes
 
-UITextSizeConstraint_2.Parent = De
+MainPage_UserDescendants.Name = "MainPage_UserDescendants"
+MainPage_UserDescendants.Parent = MainPage
+MainPage_UserDescendants.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+MainPage_UserDescendants.BorderColor3 = Color3.fromRGB(0, 0, 0)
+MainPage_UserDescendants.BorderSizePixel = 0
+MainPage_UserDescendants.Position = UDim2.new(0.0487583317, 0, 0.319218546, 0)
+MainPage_UserDescendants.Size = UDim2.new(0.304739565, 0, 0.136418223, 0)
+MainPage_UserDescendants.Font = Enum.Font.SourceSansBold
+MainPage_UserDescendants.Text = "Get All Descendants in [USER]"
+MainPage_UserDescendants.TextColor3 = Color3.fromRGB(255, 255, 255)
+MainPage_UserDescendants.TextScaled = true
+MainPage_UserDescendants.TextSize = 100.000
+MainPage_UserDescendants.TextWrapped = true
+
+UITextSizeConstraint_3.Parent = MainPage_UserDescendants
+
+UICorner_4.CornerRadius = UDim.new(0.200000003, 0)
+UICorner_4.Parent = MainPage_UserDescendants
 
 
-local CreateDataTemplate = function(DataToShow)
+
+local CreateDataTemplate = function(DataToShow: string)
 	if DataToShow == nil then return end
 	local clone = Template:Clone()
-	clone.Parent = ScrollingFrame
+	clone.Parent = MainPage_DataList
 	clone.Data.Text = DataToShow
 	clone.Visible = true
+	clone.Name = DataToShow
 end
 
-Remotes.MouseButton1Click:Connect(function()
+local ClearDataOutput = function()
+	for i, v in pairs(MainPage_DataList:GetChildren()) do
+		if v.Name == "Template" then continue end
+		if not v:IsA("Frame") then continue end
+		v:Destroy()
+	end
+end
+
+MainPage_ReplicatedRemotes.MouseButton1Click:Connect(function()
+	ClearDataOutput()
 	for i, v in pairs(game.ReplicatedStorage:GetDescendants()) do
 		if v:IsA("RemoteEvent") or v:IsA("BindableEvent") or v:IsA("BindableFunction") or v:IsA("UnreliableRemoteEvent") then
-			CreateDataTemplate(v:GetFullName())
+			CreateDataTemplate(v:GetFullName().." - "..v.ClassName)
 		end
 	end
 end)
 
-De.MouseButton1Click:Connect(function()
+MainPage_UserDescendants.MouseButton1Click:Connect(function()
+	ClearDataOutput()
 	for i, v in pairs(game.Players.LocalPlayer:GetDescendants()) do
-		CreateDataTemplate(v:GetFullName())
+		CreateDataTemplate(v:GetFullName().." - "..v.ClassName)
 	end
+end)
+
+Exit.MouseButton1Click:Connect(function()
+	TweenService:Create(Holder, TweenInfo.new(1), {Position = UDim2.fromScale(Holder.Position.X.Scale,2)}):Play()
+	task.wait(1)
+	Gui:Destroy()
+end)
+
+Minimise.MouseButton1Click:Connect(function()
+	TweenService:Create(Main, TweenInfo.new(1), {Size = UDim2.fromScale(0, Main.Size.Y.Scale)}):Play()
 end)
